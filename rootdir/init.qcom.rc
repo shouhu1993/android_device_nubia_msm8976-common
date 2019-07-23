@@ -27,7 +27,7 @@
 
 import init.qcom.usb.rc
 import init.target.rc
-import init.qcom.factory.rc
+#import init.qcom.factory.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -999,13 +999,6 @@ service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
     group system
     writepid /dev/cpuset/system-background/tasks
 
-# service for USERDEBUG
-service LKCore-dbg /system/vendor/bin/LKCore
-    class late_start
-    oneshot
-    disabled
-    user root
-    group root system log qcom_diag
 
 # service for USER
 service LKCore-rel /system/vendor/bin/LKCore
